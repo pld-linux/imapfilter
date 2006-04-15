@@ -1,5 +1,5 @@
 Summary:	IMAP Filter
-Summary(pl):	Filtr dla IMAP
+Summary(pl):	Filtr dla protoko³u IMAP
 Name:		imapfilter
 Version:	1.2.1
 Release:	0.1
@@ -21,7 +21,7 @@ residing in mailboxes at the same or different mail servers. The 4rev1
 and 4 versions of the IMAP protocol are supported.
 
 %description -l pl
-imapfilter jest narzêdziem do filtrowania poczty. £±czy siê z zdalnym
+imapfilter jest narzêdziem do filtrowania poczty. £±czy siê ze zdalnym
 serwerem korzystaj±c z protoko³u IMAP, wysy³a zapytania na serwer i
 przetwarza skrzynki w zale¿no¶ci od rezultatów. Mo¿e byæ
 wykorzystywany do usuwania, kopiowania, przenoszenia, zmiany flag i
