@@ -1,5 +1,5 @@
 Summary:	IMAP Filter
-Summary(pl.UTF-8):	Filtr dla protokoÅ‚u IMAP
+Summary(pl):	Filtr dla protoko³u IMAP
 Name:		imapfilter
 Version:	1.2.1
 Release:	1
@@ -20,13 +20,13 @@ results. It can be used to delete, copy, move, flag, etc. messages
 residing in mailboxes at the same or different mail servers. The 4rev1
 and 4 versions of the IMAP protocol are supported.
 
-%description -l pl.UTF-8
-imapfilter jest narzÄ™dziem do filtrowania poczty. ÅÄ…czy siÄ™ ze zdalnym
-serwerem korzystajÄ…c z protokoÅ‚u IMAP, wysyÅ‚a zapytania na serwer i
-przetwarza skrzynki w zaleÅ¼noÅ›ci od rezultatÃ³w. MoÅ¼e byÄ‡
+%description -l pl
+imapfilter jest narzêdziem do filtrowania poczty. £±czy siê ze zdalnym
+serwerem korzystaj±c z protoko³u IMAP, wysy³a zapytania na serwer i
+przetwarza skrzynki w zale¿no¶ci od rezultatów. Mo¿e byæ
 wykorzystywany do usuwania, kopiowania, przenoszenia, zmiany flag i
 tym podobnych operacji na skrzynkach na tym samym lub innych
-serwerach. ObsÅ‚uguje zarÃ³wno wersjÄ™ 4 jak i 4rev1 protokoÅ‚u IMAP.
+serwerach. Obs³uguje zarówno wersjê 4 jak i 4rev1 protoko³u IMAP.
 
 %prep
 %setup -q
