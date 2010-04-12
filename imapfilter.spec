@@ -2,7 +2,7 @@ Summary:	IMAP Filter
 Summary(pl.UTF-8):	Filtr dla protokołu IMAP
 Name:		imapfilter
 Version:	1.2.1
-Release:	1
+Release:	2
 License:	MIT/X Consortium
 Group:		Applications/Mail
 Source0:	http://imapfilter.hellug.gr/source/%{name}-%{version}.tar.gz
