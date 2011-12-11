@@ -1,15 +1,16 @@
 Summary:	IMAP Filter
 Summary(pl.UTF-8):	Filtr dla protokołu IMAP
 Name:		imapfilter
-Version:	1.2.1
-Release:	2
+Version:	2.4.1
+Release:	1
 License:	MIT/X Consortium
 Group:		Applications/Mail
-Source0:	http://imapfilter.hellug.gr/source/%{name}-%{version}.tar.gz
-# Source0-md5:	25673a7e93eb256b3b434ab7560dba76
-URL:		http://imapfilter.hellug.gr/
-BuildRequires:	lua50-devel
+Source0:	https://github.com/downloads/lefcha/imapfilter/%{name}-%{version}.tar.gz
+# Source0-md5:	6556c06ff319204d4d9807e7df6a8958
+URL:		https://github.com/lefcha/imapfilter
+BuildRequires:	lua51-devel
 BuildRequires:	openssl-devel
+BuildRequires:	pcre-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -33,28 +34,26 @@ serwerach. Obsługuje zarówno wersję 4 jak i 4rev1 protokołu IMAP.
 
 %build
 %{__make} \
-	MYCFLAGS="%{rpmcflags}" \
-	INCDIRS="-I/usr/include/lua50" \
-	LIBS="-lm -llua50 -llualib50 -lssl -lcrypto" \
-	BINDIR=%{_bindir} \
-	SHAREDIR=%{_datadir}/%{name} \
-	MANDIR=%{_mandir}
+	CC="%{__cc}" \
+	CFLAGS="%{rpmcflags} `pkg-config --cflags lua51` -DMAKEFILE_SHAREDIR='\"%{_datadir}/%{name}\"' " \
+	LDFLAGS="%{rpmldflags}" \
+	LIBS="-lm -lssl -lcrypto `pkg-config --libs lua51` -lpcre"
 
 %install
 rm -rf $RPM_BUILD_ROOT
 
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT \
-	BINDIR=$RPM_BUILD_ROOT%{_bindir} \
-	SHAREDIR=$RPM_BUILD_ROOT%{_datadir}/%{name} \
-	MANDIR=$RPM_BUILD_ROOT%{_mandir}
+	BINDIR=%{_bindir} \
+	SHAREDIR=%{_datadir}/%{name} \
+	MANDIR=%{_mandir}
 
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc README NEWS sample.*
+%doc README NEWS AUTHORS
 %attr(755,root,root) %{_bindir}/*
 %{_datadir}/%{name}
 %{_mandir}/man?/*
