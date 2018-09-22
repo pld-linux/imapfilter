@@ -1,12 +1,12 @@
 Summary:	IMAP Filter
 Summary(pl.UTF-8):	Filtr dla protokołu IMAP
 Name:		imapfilter
-Version:	2.4.1
-Release:	3
+Version:	2.6.11
+Release:	1
 License:	MIT/X Consortium
 Group:		Applications/Mail
-Source0:	https://github.com/downloads/lefcha/imapfilter/%{name}-%{version}.tar.gz
-# Source0-md5:	6556c06ff319204d4d9807e7df6a8958
+Source0:	https://github.com/lefcha/imapfilter/archive/v%{version}.tar.gz
+# Source0-md5:	ce2b896b350e4dfa1d6376dfb6072687
 URL:		https://github.com/lefcha/imapfilter
 BuildRequires:	lua51-devel
 BuildRequires:	openssl-devel
@@ -35,7 +35,7 @@ serwerach. Obsługuje zarówno wersję 4 jak i 4rev1 protokołu IMAP.
 %build
 %{__make} \
 	CC="%{__cc}" \
-	CFLAGS="%{rpmcflags} `pkg-config --cflags lua51` -DMAKEFILE_SHAREDIR='\"%{_datadir}/%{name}\"' " \
+	CFLAGS="%{rpmcflags} `pkg-config --cflags lua51` -DCONFIG_SHAREDIR='\"%{_datadir}/%{name}\"' " \
 	LDFLAGS="%{rpmldflags}" \
 	LIBS="-lm -lssl -lcrypto `pkg-config --libs lua51` -lpcre"
 
